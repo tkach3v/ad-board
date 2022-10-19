@@ -1,0 +1,877 @@
+{
+	"info": {
+		"_postman_id": "2a7aec60-685e-42ff-af5e-d53f65c0f68c",
+		"name": "ad-board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10715400"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smit\",\r\n    \"status\": \"ACTIVE\",\r\n    \"rating\": 0,\r\n    \"role\": \"USER\",\r\n    \"email\": \"smit@gmail.com\",\r\n    \"password\": \"$2a$12$/YM3Gigu6wstrG3FAeEkUeE44xIfgc17glySC7M6XBJycJrS/UEXq\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/users",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/users/-1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/users",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -1,\r\n    \"firstName\": \"Alex\",\r\n    \"lastName\": \"Petrov\",\r\n    \"status\": \"ACTIVE\",\r\n    \"rating\": 4.7,\r\n    \"role\": \"USER\",\r\n    \"email\": \"petrov@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/users",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/users/12",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "createChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userIds\": [11, 13]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/chats",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getChatById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/chats/7",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getChats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/chats",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats"
+							],
+							"query": [
+								{
+									"key": "sort-type",
+									"value": "BY_NAME",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "DESCENDING",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateChat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/chats",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteChat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/chats/5",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "messages",
+			"item": [
+				{
+					"name": "createMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"I am OK\",\r\n    \"status\": \"SENT\",\r\n    \"date\": \"07.10.2022 09:40:20\",\r\n    \"chatId\": \"7\",\r\n    \"senderId\": \"16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/messages",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessageById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/messages/23",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/messages",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMessage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 25,\r\n    \"content\": \"John said that you should be on time\",\r\n    \"status\": \"RECEIVED\",\r\n    \"date\": \"08.10.2022 09:40:20\",\r\n    \"chatId\": 8,\r\n    \"senderId\": 16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/messages",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMessage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/messages/1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ads",
+			"item": [
+				{
+					"name": "createAd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"fiction\",\r\n    \"description\": \"I am selling fiction. For details in private messages\",\r\n    \"price\": 500,\r\n    \"status\": \"ACTIVE\",\r\n    \"ownerId\": 14,\r\n    \"categoryId\": 1,\r\n    \"creationDate\": \"09.10.2022\",\r\n    \"saleDate\": \"11.10.2022\",\r\n    \"promotion\": false,\r\n    \"promotionEndDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/ads",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/ads/-1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ads",
+								"-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/ads",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ads"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "book",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "600-3000",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "SOLD",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "-2",
+									"disabled": true
+								},
+								{
+									"key": "owner",
+									"value": "-3",
+									"disabled": true
+								},
+								{
+									"key": "sort-type",
+									"value": "BY_SALE_DATE",
+									"disabled": true
+								},
+								{
+									"key": "sort-order",
+									"value": "ASC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAd",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"Programming books\",\r\n    \"description\": \"I am selling programming books. For details in private messages\",\r\n    \"price\": 500,\r\n    \"status\": \"BOUGHT\",\r\n    \"ownerId\": \"14\",\r\n    \"creationDate\": \"07.10.2022\",\r\n    \"promotion\": false,\r\n    \"promotionEndDate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/ads",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAd",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/ads/2",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ads",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "createReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"score\": 3,\r\n    \"comment\": \"everything went perfectly\",\r\n    \"authorId\": -2,\r\n    \"adId\": -1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/reviews",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/reviews/-1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/reviews",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReview",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -1,\r\n    \"score\": 5,\r\n    \"comment\": \"everything went perfectly\",\r\n    \"authorId\": -2,\r\n    \"adId\": -1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/reviews",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/reviews/1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"phones\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/categories",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/categories/1",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/categories",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"flowers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/categories",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/categories/2",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"shain@gmail.com\",\r\n    \"password\": \"shain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ad-board}}/api/v1/auth/login",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{ad-board}}/api/v1/auth/logout",
+							"host": [
+								"{{ad-board}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGFpbkBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2NjU1OTAxNDMsImV4cCI6MTY2NjE5NDk0M30.F4UA2gtPIGdFfkKpEw1Sd-JhIGotT96uFF3kag3IrYM",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ad-board",
+			"value": "http://localhost:8080"
+		}
+	]
+}
