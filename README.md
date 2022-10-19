@@ -1,4 +1,4 @@
-# Final Project
+# Spring Boot, PostgreSQL, Spring Security, Spring Data, JPA, Rest API, JUnit
 
 Built RESTful API for an ad board using Spring Boot, PostgreSQL, Spring Security, Spring Data, JPA, Rest API, JUnit, MapStruct, Luquibase, Swagger, Spring Validation.
 
