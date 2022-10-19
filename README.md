@@ -28,3 +28,5 @@ mvn spring-boot:run
 
 - The app will start running at <http://localhost:8080>
 - Swagger UI available at <http://localhost:8080/api/v1/swagger-ui/index.html>
+- Also you can use Postman collection <https://github.com/tkach3v/ad-board/blob/main/docs/ad-board.postman_collection.json>
+
